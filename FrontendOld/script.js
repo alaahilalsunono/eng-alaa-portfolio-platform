@@ -1,4 +1,4 @@
-/* Scroll reveal */
+
 const revealSections = document.querySelectorAll('.reveal-section');
 
 revealSections.forEach((section) => {
@@ -150,39 +150,32 @@ async function loadPortfolioProjects() {
     try {
 
         const response =
-            await fetch("http://localhost:3000/api/projects");
+            await fetch("http://localhost:5050/api/projects");
 
         const projects = await response.json();
 
-        portfolioProjectsGrid.innerHTML = projects.map(project => `
+        portfolioProjectsGrid.innerHTML =
+            projects.map(project => `
 
-            <article class="project-card">
+                <article class="project-card">
 
-                <div class="project-picture"></div>
+                    <div class="project-picture"></div>
 
-                <div class="project-info">
+                    <div class="project-info">
 
-                    <span class="project-category">
-                        ${project.category}
-                    </span>
+                        <span class="project-category">
+                            ${project.category}
+                        </span>
 
-                    <h3>${project.title}</h3>
+                        <h3>${project.title}</h3>
 
-                    <p>${project.description}</p>
+                        <p>${project.description}</p>
 
-                    <a class="read-more"
-                       href="${project.demo || "#"}"
-                       target="_blank">
+                    </div>
 
-                        Read More
+                </article>
 
-                    </a>
-
-                </div>
-
-            </article>
-
-        `).join("");
+            `).join("");
 
     } catch (error) {
 

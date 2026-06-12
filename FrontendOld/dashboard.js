@@ -155,13 +155,66 @@ function deleteProject(id) {
 }
 
 document.querySelectorAll('[data-open-project-modal]').forEach(btn => btn.addEventListener('click', () => openProjectModal()));
-document.getElementById('projectForm').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const project = { id: form.id.value || crypto.randomUUID(), title: form.title.value, description: form.description.value, category: form.category.value, image: form.image.value, github: form.github.value, demo: form.demo.value };
-  const index = state.projects.findIndex(p => p.id === project.id);
-  if (index >= 0) state.projects[index] = project; else state.projects.unshift(project);
-  save('projects'); renderProjects(); updateStats(); closeModals(); addActivity(index >= 0 ? 'Project updated' : 'New project added', project.title); toast('Project saved');
+document.getElementById('projectForm').addEventListener('submit', async (event) => {
+
+    event.preventDefault();
+
+    const form = event.currentTarget;
+
+    const project = {
+
+        title: form.title.value,
+
+        description: form.description.value,
+
+        category: form.category.value,
+
+        image: form.image.value,
+
+        github: form.github.value,
+
+        demo: form.demo.value
+    };
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:5050/api/projects",
+            {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(project)
+            }
+        );
+
+        const savedProject = await response.json();
+
+        state.projects.unshift(savedProject);
+
+        renderProjects();
+
+        updateStats();
+
+        closeModals();
+
+        addActivity(
+            'New project added',
+            savedProject.title
+        );
+
+        toast('Project saved to server');
+
+    } catch (error) {
+
+        console.error(error);
+
+        toast('Failed to save project');
+    }
 });
 
 function renderSkillFilters() {
