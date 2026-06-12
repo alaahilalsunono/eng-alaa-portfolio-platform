@@ -2,8 +2,8 @@
 
 ## Dark Mode
 
-![Dark Mode](Home%20Night%20mood%20(1).jpg)
+![Dark Mode](home-dark.jpg)
 
 ## Light Mode
 
-![Light Mode](Home%20Light%20mood%20(2).jpg)
+![Light Mode](home-light.jpg)
