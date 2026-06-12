@@ -77,6 +77,31 @@ This project aims to solve that problem by providing a dynamic portfolio platfor
 
 ---
 
+## Functional Requirements
+
+* The system shall allow visitors to view portfolio information.
+* The system shall allow visitors to view project details.
+* The system shall allow visitors to send contact messages.
+* The system shall allow visitors to download the CV.
+* The system shall allow the admin to log in securely.
+* The system shall allow the admin to manage projects.
+* The system shall allow the admin to manage skills.
+* The system shall allow the admin to upload project images.
+* The system shall allow the admin to view contact messages.
+
+---
+
+## Non-Functional Requirements
+
+* The platform should be responsive on desktop and mobile devices.
+* The application should provide secure authentication using JWT.
+* The system should have a user-friendly interface.
+* The application should be maintainable and scalable.
+* The platform should support dark mode and light mode.
+* The system should load pages within an acceptable response time.
+
+---
+
 ## Future Features
 
 * Certificates Management
