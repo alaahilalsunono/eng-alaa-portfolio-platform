@@ -25,7 +25,7 @@
 
 ### Public Pages
 
-- Home
+- Home (Single Page Portfolio)
 - Project Details
 
 ### Admin Pages
@@ -50,7 +50,13 @@ The Home page will contain:
 - Projects
 - Contact
 
-Each project card will open a dedicated Project Details page.
+Each project card will open a dedicated Project Details page that contains:
+
+- Project Description
+- Project Images
+- Technologies Used
+- GitHub Link
+- Demo Link
 
 The admin area will be separated from the public portfolio and will contain its own management pages.
 
@@ -60,15 +66,22 @@ The admin area will be separated from the public portfolio and will contain its 
 
 ### Visitor Flow
 
-Home  
-→ Projects  
-→ Project Details  
+Home
+
+→ Browse Projects
+
+→ Project Details
+
 → Contact
 
 ### Admin Flow
 
-Login  
-→ Dashboard  
-→ Manage Projects  
-→ Manage Skills  
+Login
+
+→ Dashboard
+
+→ Manage Projects
+
+→ Manage Skills
+
 → Messages
